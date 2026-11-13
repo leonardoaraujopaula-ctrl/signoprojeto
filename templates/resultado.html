@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Signo: {{ signo['nome'] }}</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS Próprio -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="d-flex align-items-center justify-content-center min-vh-100">
+
+    <div class="estrelas"></div>
+
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-6">
+                <div class="card card-zodiaco p-4 p-md-5 text-center">
+                    <div class="circulo-simbolo mx-auto mb-3">
+                        <span>{{ signo['simbolo'] }}</span>
+                    </div>
+
+                    <span class="badge badge-elemento mb-3 mx-auto">Elemento: {{ signo['elemento'] }}</span>
+
+                    <h1 class="display-4 titulo-principal mb-1">{{ signo['nome'] }}</h1>
+                    <p class="periodo-texto mb-4">Período: {{ signo['data_inicio'] }} a {{ signo['data_fim'] }}</p>
+
+                    <div class="divisor-mistico my-3"></div>
+
+                    <p class="descricao-texto my-4">{{ signo['descricao'] }}</p>
+
+                    <a href="{{ url_for('index') }}" class="btn btn-voltar mt-2">← Consultar outra data</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

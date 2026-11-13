@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o seu Signo</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS Próprio -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="d-flex align-items-center justify-content-center min-vh-100">
+
+    <div class="estrelas"></div>
+
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card card-zodiaco p-4 p-md-5 text-center">
+                    <div class="icone-topo mb-3">✨ 🌙 ✨</div>
+                    <h1 class="mb-3 titulo-principal">Descubra o seu Signo</h1>
+                    <p class="subtitulo mb-4">Insira sua data de nascimento abaixo para revelar os segredos e
+                        características do seu signo zodiacal.</p>
+
+                    <form id="formSigno" action="{{ url_for('descobrir') }}" method="POST">
+                        <div class="mb-4 text-start">
+                            <label for="data_nascimento" class="form-label label-custom">Data de Nascimento</label>
+                            <input type="date" class="form-control form-control-lg input-zodiaco" id="data_nascimento"
+                                name="data_nascimento" required>
+                        </div>
+                        <button type="submit" class="btn btn-zodiaco btn-lg w-100">Revelar Meu Signo</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
